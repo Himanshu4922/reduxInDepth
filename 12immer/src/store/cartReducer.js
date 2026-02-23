@@ -1,0 +1,70 @@
+import { produce } from "immer";
+
+const initialState = [];
+
+export function addCartItem(product) {
+  return { type: "cart/addItem", payload: product };
+}
+export function removeCartItem(product) {
+  return { type: "cart/removeItem", payload: product };
+}
+export function cartReducer(state = initialState, action) {
+  // switch (action.type) {
+  //   case "cart/addItem": {
+  //     const itemExists = state.find((elem, i) => elem.id === action.payload.id);
+  //     if (itemExists) {
+  //       return state.map((elem) => {
+  //         if (itemExists === elem) {
+  //           elem["qty"] += 1;
+  //         }
+  //         return elem;
+  //       });
+  //     } else {
+  //       const newItem = { ...action.payload, qty: 1 };
+  //       return [...state, newItem];
+  //     }
+  //   }
+  //   case "cart/removeItem": {
+  //     const itemExists = state.find((elem, i) => elem.id === action.payload.id);
+  //     if (itemExists.qty > 1) {
+  //       return state.map((elem) => {
+  //         if (itemExists === elem) {
+  //           elem["qty"] -= 1;
+  //         }
+  //         return elem;
+  //       });
+  //     } else {
+  //       return state.filter((cartItem) => cartItem.id !== action.payload.id);
+  //     }
+  //   }
+  //   default: {
+  //     return state;
+  //   }
+  // }
+  const itemExists = state.findIndex((item) => item.id === action.payload.id);
+  switch (action.type) {
+    case "cart/addItem": {
+      if (itemExists > -1) {
+        return produce(state, (stateProxy) => {
+          stateProxy[itemExists].qty += 1;
+        });
+      }
+      return produce(state, (stateProxy) => {
+        action.payload.qty = 1;
+        stateProxy.push(action.payload);
+      });
+    }
+    case "cart/removeItem": {
+      return produce(state, (stateProxy) => {
+        if (stateProxy[itemExists].qty > 1) {
+          stateProxy[itemExists].qty -= 1;
+        } else {
+          stateProxy.splice(itemExists, 1);
+        }
+      });
+    }
+    default: {
+      return state;
+    }
+  }
+}
