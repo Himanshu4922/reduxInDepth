@@ -1,4 +1,4 @@
-# Redux Middleware — Learning Notes
+# Redux Middleware(Summary)
 
 > **Middleware in Redux** sits between `dispatch` and the `reducer` — intercepting, transforming, or halting actions before they hit the reducer.
 
