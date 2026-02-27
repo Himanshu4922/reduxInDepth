@@ -1,0 +1,26 @@
+{
+  "name": "8reactredux",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "@tailwindcss/postcss": "^4.1.18",
+    "immer": "^11.1.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-redux": "^9.2.0",
+    "react-router": "^6.30.3",
+    "react-router-dom": "^6.30.3",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
