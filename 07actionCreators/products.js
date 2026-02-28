@@ -1,0 +1,58 @@
+export const products = [
+  {
+    id: 1,
+    title: "iPhone 15",
+    price: 79999,
+    category: "mobile",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 2,
+    title: "Samsung Galaxy S23",
+    price: 69999,
+    category: "mobile",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 3,
+    title: "MacBook Air M2",
+    price: 114999,
+    category: "laptop",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 4,
+    title: "Dell XPS 13",
+    price: 104999,
+    category: "laptop",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 5,
+    title: "Sony WH-1000XM5",
+    price: 29999,
+    category: "headphones",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 6,
+    title: "Apple Watch Series 9",
+    price: 41999,
+    category: "wearable",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 7,
+    title: "iPad Pro 11-inch",
+    price: 81999,
+    category: "tablet",
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    id: 8,
+    title: "JBL Flip 6 Speaker",
+    price: 11999,
+    category: "audio",
+    image: "https://via.placeholder.com/150",
+  },
+];
