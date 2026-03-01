@@ -134,4 +134,4 @@ dispatch(action)
 
 ---
 
-*Learning Redux one concept at a time *
+Learning Redux one concept at a time 
